@@ -14,6 +14,9 @@ RUN pip install --upgrade pip \
 
 # --- STEP 4: Copy toàn bộ source code và data vào container
 COPY ../.. .
+COPY rcpsp_pack_d_nb_600s.py .
+COPY ../../data .
+COPY ../../result .
 
 # --- STEP 5: Chỉ định ENTRYPOINT hoặc CMD để container tự chạy batch job khi start
 # Ở đây ta export PYTHONUNBUFFERED=1 để đảm bảo mọi print đều flush ngay
@@ -22,7 +25,7 @@ ENV PYTHONUNBUFFERED=1
 # Tạo một tập hợp lệnh shell, chạy tuần tự 4 script, ghi log ra stdout
 CMD [ "bash", "-lc", "\
      echo '>>> Container started, running RCPSP batch...'; \
-     python script\pack_d_nb_600s\rcpsp_pack_d_nb_600s.py; \
-     echo '>>> script\pack_d_nb_600s\rcpsp_pack_d_nb_600s.py'; \
+     python rcpsp_pack_d_nb_600s.py; \
+     echo '>>> rcpsp_pack_d_nb_600s.py'; \
      echo '>>> All scripts done, exiting.' \
 " ]

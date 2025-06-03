@@ -13,7 +13,6 @@ RUN pip install --upgrade pip \
  && pip install --no-cache-dir google-cloud-storage
 
 # --- STEP 4: Copy toàn bộ source code và data vào container
-COPY ../.. .
 COPY rcpsp_pack_d_nb_600s.py .
 COPY ../../data .
 COPY ../../result .

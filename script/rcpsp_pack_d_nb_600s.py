@@ -9,7 +9,7 @@ Usage:
 This script:
 1. Finds all .data files in the Convert/data/pack directory
 2. Solves each RCPSP instance using the CP Optimizer
-3. Records results in result/pack_d_no_bound_1200s.csv with columns:
+3. Records results in result/pack_d_no_bound_600s.csv with columns:
    - file name (just the filename, not the path)
    - makespan (makespan found)
    - Status (optimal/feasible/unknown)
@@ -26,12 +26,12 @@ import os
 
 def solve_rcpsp(data_file):
     """
-    Solve the RCPSP problem for the given data file with fixed 1200 second time limit
+    Solve the RCPSP problem for the given data file with fixed 600 second time limit
     Returns tuple: (makespan, status, solve_time)
     """
     start_time = time.time()
 
-    TIME_PER_INSTANCE = 1200
+    TIME_PER_INSTANCE = 600
 
     try:
         # Read the input data file
@@ -71,8 +71,8 @@ def solve_rcpsp(data_file):
         # Always minimize the makespan
         mdl.add(minimize(makespan))
 
-        # Solve model with fixed time limit (1200 seconds per instance)
-        print(f"Solving model for {data_file.name} with 1200 seconds time limit...")
+        # Solve model with fixed time limit (600 seconds per instance)
+        print(f"Solving model for {data_file.name} with 600 seconds time limit...")
         res = mdl.solve(TimeLimit=TIME_PER_INSTANCE, LogVerbosity="Quiet")
 
         solve_time = time.time() - start_time
@@ -116,9 +116,9 @@ def solve_rcpsp(data_file):
 
 def main():
     # Define directories
-    data_dir = Path("../../data")
-    result_dir = Path("../../result")
-    output_file = result_dir / "pack_d_no_bound_1200s.csv"
+    data_dir = Path("../data")
+    result_dir = Path("../result")
+    output_file = result_dir / "pack_d_no_bound_600s.csv"
 
     # Create result directory if it doesn't exist
     os.makedirs(result_dir, exist_ok=True)
@@ -134,7 +134,7 @@ def main():
         return
 
     print(f"Found {len(data_files)} .data files to process")
-    print("Using 1200 seconds time limit per instance")
+    print("Using 600 seconds time limit per instance")
     print("Solving WITHOUT using any provided bounds")
 
     # Initialize CSV
@@ -193,7 +193,7 @@ def main():
     client = storage.Client()
     bucket = client.bucket(bucket_name)
 
-    local_path = "../../result/pack_d_no_bound_1200s.csv"
+    local_path = "../result/pack_d_no_bound_600s.csv"
     blob_name = f"results/{os.path.basename(local_path)}"  # ví dụ "results/j30_no_bound_1200s.csv"
 
     blob = bucket.blob(blob_name)

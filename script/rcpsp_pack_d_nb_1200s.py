@@ -116,8 +116,8 @@ def solve_rcpsp(data_file):
 
 def main():
     # Define directories
-    data_dir = Path("../data")
-    result_dir = Path("../result")
+    data_dir = Path("data")  # Thay vì "../data"
+    result_dir = Path("result")  # Thay vì "../result"
     output_file = result_dir / "pack_d_no_bound_1200s.csv"
 
     # Create result directory if it doesn't exist
@@ -193,7 +193,7 @@ def main():
     client = storage.Client()
     bucket = client.bucket(bucket_name)
 
-    local_path = "../result/pack_d_no_bound_1200s.csv"
+    local_path = "result/pack_d_no_bound_1200s.csv"  # Thay vì "../result/..."
     blob_name = f"results/{os.path.basename(local_path)}"  # ví dụ "results/j30_no_bound_1200s.csv"
 
     blob = bucket.blob(blob_name)

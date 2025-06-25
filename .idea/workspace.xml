@@ -4,12 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="26e3cc58-e93a-4946-9448-379ae999feef" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/test_exact_makespan.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rcpsp_pack_d_nb_1200s.py" beforeDir="false" afterPath="$PROJECT_DIR$/rcpsp_pack_d_nb_1200s.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/result/pack_d_with_bound_1200s.csv" beforeDir="false" afterPath="$PROJECT_DIR$/result/pack_d_with_bound_1200s.csv" afterDir="false" />
-    </list>
+    <list default="true" id="26e3cc58-e93a-4946-9448-379ae999feef" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />

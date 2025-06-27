@@ -13,7 +13,7 @@ from google.cloud import storage
 import os
 
 # Thời gian tối đa cho mỗi instance
-TIME_PER_INSTANCE = 600
+TIME_PER_INSTANCE = 1200
 
 
 def solve_rcpsp_with_exact_makespan(data_file, target_makespan, lower_bound, time_remaining):
